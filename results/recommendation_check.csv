@@ -1,0 +1,4 @@
+round_threshold_h,printers,build_units,depowder_stations,blast_cabinets,finishing_benches,qc_benches,operators_per_shift,count,days_per_week,cost_keur_year,lead_pred_h,lead_sim_h,lead_sim_ci,meets_target
+110.0,2,6,1,1,3,1,2,3,6,650.8,108.6,111.1,2.7,False
+110.0,2,5,2,1,1,1,2,3,6,651.6,100.9,112.8,4.5,False
+110.0,2,5,1,2,3,2,2,3,6,652.8,109.2,107.4,4.8,True

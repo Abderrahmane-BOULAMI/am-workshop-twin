@@ -1,0 +1,271 @@
+{
+  "baseline": {
+    "lead_time_mean_h": 126.96181829758311,
+    "lead_time_mean_h_ci": 4.772663316916404,
+    "lead_time_p90_h": 181.37456468914226,
+    "parts_shipped_per_week": 882.15,
+    "jobs_per_week": 10.8875,
+    "mean_build_fill": 0.9472378324899671
+  },
+  "utilisation_ranking": [
+    [
+      "operators",
+      0.7472731465426725
+    ],
+    [
+      "blast",
+      0.572242793960797
+    ],
+    [
+      "qc",
+      0.42832471453476106
+    ],
+    [
+      "finish",
+      0.4281524639567852
+    ],
+    [
+      "printer",
+      0.3901167321798892
+    ]
+  ],
+  "scenarios": {
+    "Baseline": {
+      "lead_time_mean_h": 127.0,
+      "lead_time_mean_h_ci": 4.8,
+      "lead_time_p90_h": 181.4,
+      "parts_shipped_per_week": 882.2,
+      "orders_open_at_end": 31.6
+    },
+    "+1 printer": {
+      "lead_time_mean_h": 125.3,
+      "lead_time_mean_h_ci": 4.0,
+      "lead_time_p90_h": 176.4,
+      "parts_shipped_per_week": 878.9,
+      "orders_open_at_end": 30.1
+    },
+    "+1 operator per shift": {
+      "lead_time_mean_h": 119.4,
+      "lead_time_mean_h_ci": 3.1,
+      "lead_time_p90_h": 169.9,
+      "parts_shipped_per_week": 885.3,
+      "orders_open_at_end": 28.6
+    },
+    "3 shifts": {
+      "lead_time_mean_h": 108.2,
+      "lead_time_mean_h_ci": 2.3,
+      "lead_time_p90_h": 159.6,
+      "parts_shipped_per_week": 914.9,
+      "orders_open_at_end": 29.4
+    },
+    "Saturday shifts": {
+      "lead_time_mean_h": 102.2,
+      "lead_time_mean_h_ci": 2.9,
+      "lead_time_p90_h": 149.8,
+      "parts_shipped_per_week": 896.6,
+      "orders_open_at_end": 22.7
+    },
+    "+1 blast cabinet": {
+      "lead_time_mean_h": 126.4,
+      "lead_time_mean_h_ci": 3.1,
+      "lead_time_p90_h": 183.0,
+      "parts_shipped_per_week": 906.7,
+      "orders_open_at_end": 28.7
+    },
+    "+1 blast cabinet and +1 operator": {
+      "lead_time_mean_h": 115.0,
+      "lead_time_mean_h_ci": 2.0,
+      "lead_time_p90_h": 167.5,
+      "parts_shipped_per_week": 882.6,
+      "orders_open_at_end": 29.1
+    },
+    "Demand +30%": {
+      "lead_time_mean_h": 255.2,
+      "lead_time_mean_h_ci": 53.3,
+      "lead_time_p90_h": 413.4,
+      "parts_shipped_per_week": 1024.8,
+      "orders_open_at_end": 97.4
+    },
+    "Demand +30%, +1 blast, +1 operator": {
+      "lead_time_mean_h": 128.4,
+      "lead_time_mean_h_ci": 5.5,
+      "lead_time_p90_h": 185.5,
+      "parts_shipped_per_week": 1168.8,
+      "orders_open_at_end": 43.8
+    }
+  },
+  "bottleneck_probe": [
+    {
+      "resource": "operators_per_shift",
+      "from": 3,
+      "to": 4,
+      "lead_time_mean_h": 119.4,
+      "lead_time_gain_h": 7.5,
+      "lead_time_gain_ci": 3.1,
+      "throughput_gain": 3.1
+    },
+    {
+      "resource": "build_units",
+      "from": 5,
+      "to": 6,
+      "lead_time_mean_h": 124.6,
+      "lead_time_gain_h": 2.4,
+      "lead_time_gain_ci": 3.0,
+      "throughput_gain": -15.5
+    },
+    {
+      "resource": "qc_benches",
+      "from": 1,
+      "to": 2,
+      "lead_time_mean_h": 125.3,
+      "lead_time_gain_h": 1.7,
+      "lead_time_gain_ci": 3.8,
+      "throughput_gain": -7.5
+    },
+    {
+      "resource": "printers",
+      "from": 3,
+      "to": 4,
+      "lead_time_mean_h": 125.3,
+      "lead_time_gain_h": 1.6,
+      "lead_time_gain_ci": 4.0,
+      "throughput_gain": -3.3
+    },
+    {
+      "resource": "blast_cabinets",
+      "from": 1,
+      "to": 2,
+      "lead_time_mean_h": 126.4,
+      "lead_time_gain_h": 0.6,
+      "lead_time_gain_ci": 3.1,
+      "throughput_gain": 24.5
+    },
+    {
+      "resource": "dye_vats",
+      "from": 1,
+      "to": 2,
+      "lead_time_mean_h": 127.8,
+      "lead_time_gain_h": -0.8,
+      "lead_time_gain_ci": 4.8,
+      "throughput_gain": 5.8
+    },
+    {
+      "resource": "depowder_stations",
+      "from": 1,
+      "to": 2,
+      "lead_time_mean_h": 128.3,
+      "lead_time_gain_h": -1.4,
+      "lead_time_gain_ci": 3.3,
+      "throughput_gain": 31.4
+    },
+    {
+      "resource": "finishing_benches",
+      "from": 2,
+      "to": 3,
+      "lead_time_mean_h": 131.5,
+      "lead_time_gain_h": -4.6,
+      "lead_time_gain_ci": 2.7,
+      "throughput_gain": 16.6
+    }
+  ],
+  "surrogate_eval": {
+    "n_train": 300,
+    "n_test": 100,
+    "lead_r2": 0.9239673262004742,
+    "lead_mape": 0.18429444209856333,
+    "tput_r2": 0.9061816773710837,
+    "tput_mae": 73.88886443833869
+  },
+  "recommendation": {
+    "demand_orders_per_day": 10.4,
+    "target_lead_h": 110.0,
+    "grid_size": 17280,
+    "simulated_configurations": 3,
+    "rounds": [
+      {
+        "threshold_h": 110.0,
+        "passed": true
+      }
+    ],
+    "best": {
+      "round_threshold_h": 110.0,
+      "printers": 2,
+      "build_units": 5,
+      "depowder_stations": 1,
+      "blast_cabinets": 2,
+      "finishing_benches": 3,
+      "qc_benches": 2,
+      "operators_per_shift": 2,
+      "count": 3,
+      "days_per_week": 6,
+      "cost_keur_year": 652.8,
+      "lead_pred_h": 109.2,
+      "lead_sim_h": 107.4,
+      "lead_sim_ci": 4.8,
+      "meets_target": true
+    },
+    "checked": [
+      {
+        "round_threshold_h": 110.0,
+        "printers": 2,
+        "build_units": 6,
+        "depowder_stations": 1,
+        "blast_cabinets": 1,
+        "finishing_benches": 3,
+        "qc_benches": 1,
+        "operators_per_shift": 2,
+        "count": 3,
+        "days_per_week": 6,
+        "cost_keur_year": 650.8,
+        "lead_pred_h": 108.6,
+        "lead_sim_h": 111.1,
+        "lead_sim_ci": 2.7,
+        "meets_target": false
+      },
+      {
+        "round_threshold_h": 110.0,
+        "printers": 2,
+        "build_units": 5,
+        "depowder_stations": 2,
+        "blast_cabinets": 1,
+        "finishing_benches": 1,
+        "qc_benches": 1,
+        "operators_per_shift": 2,
+        "count": 3,
+        "days_per_week": 6,
+        "cost_keur_year": 651.6,
+        "lead_pred_h": 100.9,
+        "lead_sim_h": 112.8,
+        "lead_sim_ci": 4.5,
+        "meets_target": false
+      },
+      {
+        "round_threshold_h": 110.0,
+        "printers": 2,
+        "build_units": 5,
+        "depowder_stations": 1,
+        "blast_cabinets": 2,
+        "finishing_benches": 3,
+        "qc_benches": 2,
+        "operators_per_shift": 2,
+        "count": 3,
+        "days_per_week": 6,
+        "cost_keur_year": 652.8,
+        "lead_pred_h": 109.2,
+        "lead_sim_h": 107.4,
+        "lead_sim_ci": 4.8,
+        "meets_target": true
+      }
+    ]
+  },
+  "gcode_box_check": {
+    "moves": 250,
+    "extrusion_moves": 200,
+    "layers": 50,
+    "max_z_mm": 10.0,
+    "filament_mm": 400.0,
+    "est_time_h": 0.0476150593228812,
+    "slicer_time_h": null
+  },
+  "runtime_s": 95
+}

@@ -1,0 +1,61 @@
+# Baseline parameters of a powder-bed additive manufacturing workshop (polyamide, MJF/SLS type).
+# Every value is an assumption to be replaced by measured data from the real workshop.
+# Time unit: hours unless the key ends with _min. Simulation starts Monday 00:00.
+
+horizon_weeks: 9          # simulated length, warm-up included
+warmup_weeks: 1           # first week discarded from statistics
+
+demand:
+  orders_per_day: 8       # Poisson arrivals, working days only, between 08:00 and 18:00
+  parts_per_order: [5, 40]   # uniform integer
+  part_volume_cm3: {median: 45, sigma: 0.6}   # lognormal
+  dye_share: 0.6          # share of parts that are dyed
+
+resources:
+  printers: 3
+  build_units: 5          # trolleys that hold a job during printing and cooling
+  depowder_stations: 1
+  blast_cabinets: 1
+  dye_vats: 1
+  finishing_benches: 2
+  qc_benches: 1
+  operators_per_shift: 3
+
+shifts:
+  count: 2                # 1: 06-14, 2: 14-22, 3: 22-06
+  days_per_week: 5        # 5 = Monday to Friday, 6 adds Saturday
+
+nesting:
+  job_capacity_cm3: 4800  # part volume that fits in one build
+  max_wait_h: 24          # a partial job is launched when its oldest part has waited this long
+  min_fill: 0.35          # ...but only if the build is at least this full, or a printer is idle
+
+times:
+  prep_min: [30, 60]
+  swap_min: 15            # automatic unload/load, no operator
+  print_base_h: 1.5
+  print_h_per_cm: 0.45
+  footprint_cm2: 1079     # 380 x 284 mm build area
+  packing_density: 0.12
+  max_height_cm: 38
+  cooling_ratio: 1.0      # cooling time = ratio x print time, build unit stays busy
+  depowder_min: [45, 90]
+  blast_min_per_part: [2, 4]
+  dye_load_min: 10
+  dye_cycle_min: 90
+  dye_capacity: 40
+  dye_max_wait_h: 4
+  finish_min_per_part: [3, 6]
+  qc_min_per_part: [1.5, 3]
+  pack_min_per_order: [8, 15]
+  reject_rate: 0.03       # parts sent back to nesting for a reprint
+
+costs:                    # indicative investment or yearly cost in kEUR, for scenario ranking only
+  printer: 450
+  build_unit: 40
+  depowder_station: 60
+  blast_cabinet: 35
+  dye_vat: 25
+  finishing_bench: 8
+  qc_bench: 15
+  operator_per_shift_year: 55
